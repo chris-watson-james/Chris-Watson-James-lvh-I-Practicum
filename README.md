@@ -1,6 +1,13 @@
 # Welcome to Integrating With HubSpot I: Foundations
 This is the official repository for the Integrating With HubSpot I: Foundations Certification Course. For more information, please go to [HubSpot Academy](https://academy.hubspot.com).
 
+## Custom Object List: 
+https://app.hubspot.com/contacts/49606747/objects/2-42537157/views/all/list
+
+
+
+
+
 ## In This Repository
 **[The Foundation of Authenticating Integrations Lesson](https://academy.hubspot.com)**
 1. The Basics of the OAuth Flow
@@ -13,6 +20,3 @@ This is the official repository for the Integrating With HubSpot I: Foundations 
 
 <sup>1</sup> There's a step in the "Refreshing an Access Token" video that's accidentally omitted. To use the accessTokenCache constant, you must require the Node library Node-Cache. Then, underneath the `const refreshTokenStore = {};`, you must add in `const accessTokenCache = new NodeCache({ deleteOnExpire: true});`. This is reflected in the finished index.js file.
 
-
-Custom Object List: 
-https://app.hubspot.com/contacts/49606747/objects/2-42537157/views/all/list
