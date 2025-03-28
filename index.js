@@ -43,7 +43,7 @@ app.get('/update-coi', (req, res) => {
 app.post('/update-coi', async (req, res) => {
     try {
         // Get form data
-        const { name, size, color } = req.body;
+        const { name, size, colour } = req.body;
 
         const url = 'https://api.hubapi.com/crm/v3/objects/planets';
         const headers = {
@@ -56,7 +56,7 @@ app.post('/update-coi', async (req, res) => {
             properties: {
                 name,
                 size,
-                color
+                colour
             }
         };
 
