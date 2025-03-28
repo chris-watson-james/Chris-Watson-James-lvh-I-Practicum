@@ -47,7 +47,7 @@ app.get('/', async (req, res) => {
 
 // TODO: ROUTE 2 - Serve the form to create or update custom object data
 app.get('/update-coi', (req, res) => {
-    res.render('update-form', { title: 'Update Custom Object' });
+    res.render('update', { title: 'Update Custom Object' });
 });
 
 // TODO: ROUTE 3 - Handle form submission to create/update custom objects
@@ -56,7 +56,7 @@ app.post('/update-coi', async (req, res) => {
         // Get form data
         const { name, size, colour } = req.body;
 
-        const url = 'https://api.hubapi.com/crm/v3/objects/planets?properties=name,colour,size'; 
+        const url = 'https://api.hubapi.com/crm/v3/objects/planets?properties=name,colour,size';
         const headers = {
             Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
             'Content-Type': 'application/json'
