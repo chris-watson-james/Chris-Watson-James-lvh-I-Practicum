@@ -2,18 +2,22 @@ doctype html
 html
   head
     title Custom Object Table
+    link(rel="stylesheet", href="styles.css")  // linking the CSS file
   body
-    h1 Custom Object Table
-    table(border="1")
-      tr
-        th Name
-        th Colour
-        th Size
-      each record in records
-        tr
-          td= record.properties.name
-          td= record.properties.colour
-          td= record.properties.size
-
-    br
-    a(href="/update-coi") Add a new record
+    header
+      h1 Custom Object Table
+    main
+      table
+        thead
+          tr
+            th Name
+            th Colour
+            th Size
+        tbody
+          each record in records
+            tr
+              td= record.properties.name
+              td= record.properties.colour
+              td= record.properties.size
+    footer
+      a(href="/update-coi") Add a new record
