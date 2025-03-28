@@ -18,15 +18,26 @@ const PRIVATE_APP_ACCESS = process.env.HUBSPOT_ACCESS_TOKEN;
 // TODO: ROUTE 1 - Fetch and display custom object data on the homepage
 app.get('/', async (req, res) => {
     try {
-        const url = 'https://api.hubapi.com/crm/v3/objects/planets';
+      const url = 'https://api.hubapi.com/crm/v3/objects/planets?properties=name,colour,size';
         const headers = {
             Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
             'Content-Type': 'application/json'
         };
 
         const response = await axios.get(url, { headers });
+
+        // Log the full API response for debugging
+        console.log('API Response:', response.data);
+
+        // Log just the properties field for each record
+        response.data.results.forEach(record => {
+            console.log('Record properties:', record.properties);
+        });
+
+        // Assuming your properties are within 'properties.name', 'properties.colour', and 'properties.size'
         const data = response.data.results;
 
+        // Render the homepage with the retrieved records
         res.render('homepage', { title: 'Planets | HubSpot APIs', records: data });
     } catch (error) {
         console.error('Error fetching records:', error);
@@ -45,7 +56,7 @@ app.post('/update-coi', async (req, res) => {
         // Get form data
         const { name, size, colour } = req.body;
 
-        const url = 'https://api.hubapi.com/crm/v3/objects/planets';
+        const url = 'https://api.hubapi.com/crm/v3/objects/planets?properties=name,colour,size'; 
         const headers = {
             Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
             'Content-Type': 'application/json'
