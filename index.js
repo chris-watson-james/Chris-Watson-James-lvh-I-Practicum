@@ -35,13 +35,20 @@ app.get("/update-coi", (req, res) => {
 app.post("/update-coi", async (req, res) => {
     try {
         // Get form data
-        const { name, bio, category } = req.body;
+        const { name, size, colour } = req.body;
+
+        // Debugging log to verify form data before sending request
+        console.log("Sending data to HubSpot:", { name, size, colour });
 
         // Send data to HubSpot API to create a new record
         await axios.post(
             "https://api.hubapi.com/crm/v3/objects/planets",
             {
-                properties: { name, bio, category },
+                properties: {
+                    name,
+                    size,
+                    colour // Ensure these match HubSpot property names
+                },
             },
             { headers: { Authorization: `Bearer ${process.env.HUBSPOT_ACCESS_TOKEN}` } }
         );
@@ -49,7 +56,7 @@ app.post("/update-coi", async (req, res) => {
         // Redirect back to homepage after success
         res.redirect("/");
     } catch (error) {
-        console.error("Error creating record:", error);
+        console.error("Error creating record:", error.response?.data || error.message);
         res.status(500).send("Error saving record");
     }
 });
