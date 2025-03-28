@@ -1,20 +1,23 @@
 doctype html
 html
   head
-    title Add a Custom Object
+    title Update Custom Object
+    link(rel="stylesheet", href="/css/styles.css")
   body
-    h1 Add a Custom Object
-    form(action="/update-coi" method="POST")
-      label(for="name") Name:
-      input(type="text" name="name" required)
-      br
+    header
+      h1 Update Custom Object Form
+    main
+      form(action="/update-coi" method="POST")
+        label(for="name") Name:
+        input(type="text" name="name" id="name" required)
 
-      label(for="colour") Colour:
-      input(type="text" name="colour" required)
-      br
+        label(for="size") Size:
+        input(type="text" name="size" id="size" required)
 
-      label(for="size") Size:
-      input(type="text" name="size" required)
-      br
+        label(for="colour") Colour:
+        input(type="text" name="colour" id="colour" required)
 
-      button(type="submit") Submit
+        button(type="submit") Submit
+
+    footer
+      a(href="/") Go back to the table
