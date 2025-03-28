@@ -1,0 +1,26 @@
+{
+  "name": "chris-watson-james-lvh-i-practicum",
+  "version": "1.0.0",
+  "description": "This is the official repository for the Integrating With HubSpot I: Foundations Certification Course. For more information, please go to [HubSpot Academy](https://academy.hubspot.com).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-watson-james/Chris-Watson-James-lvh-I-Practicum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris-watson-james/Chris-Watson-James-lvh-I-Practicum/issues"
+  },
+  "homepage": "https://github.com/chris-watson-james/Chris-Watson-James-lvh-I-Practicum#readme",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pug": "^3.0.3"
+  }
+}
