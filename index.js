@@ -47,7 +47,7 @@ app.get('/', async (req, res) => {
 
 // TODO: ROUTE 2 - Serve the form to create or update custom object data
 app.get('/update-coi', (req, res) => {
-    res.render('update', { title: 'Update Custom Object' });
+    res.render('update-form', { title: 'Update Custom Object' });
 });
 
 // TODO: ROUTE 3 - Handle form submission to create/update custom objects
